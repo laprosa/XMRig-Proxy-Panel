@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XMRig Proxy Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                XMRig Proxy Dashboard
+                <span id="statusBadge" class="status-badge">Loading...</span>
+            </h1>
+            <div class="subtitle">
+                <span id="workerId">Loading...</span>
+                <span class="edit-url" id="editUrl" onclick="showConfig()">Change URL</span>
+                <span class="refresh-time">Last updated: <span id="lastUpdate">--</span></span>
+            </div>
+        </header>
+
+        <div id="dashboard" class="loading">
+            <p>Loading dashboard data...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
