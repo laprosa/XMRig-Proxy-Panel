@@ -9,12 +9,19 @@ A modern, real-time web dashboard for monitoring XMRig Proxy mining operations.
 
 ## Features
 
-- **Real-time Monitoring** - Auto-refreshes every 10 seconds
-- **Worker Statistics** - Track active miners, workers, and uptime
+- **Real-time Monitoring** - Auto-refreshes with configurable intervals (1s, 5s, 10s, 30s)
+- **Worker Statistics** - Track active miners and uptime
 - **Hashrate Analytics** - View performance across multiple time periods (10s, 1m, 15m, 1h, 12h, 24h)
-- **System Resources** - Monitor memory usage, CPU load, and hardware stats
+- **Interactive Charts** - Clean chart showing hashrate and active miners with time axis
+- **Time Range Selection** - View data for 1 min, 5 min, 1 hour, 1 day, or lifetime
+- **Extended History** - Up to 2000 data points for comprehensive lifetime view
+- **Memory Monitoring** - Simple RAM usage display
 - **Mining Results** - Track accepted/rejected shares, acceptance rate, and latency
-- **Upstream Pools** - Monitor pool connections and status
+- **Chart.js Legend Controls** - Click legend to show/hide hashrate or miners
+- **Dual Y-Axes** - Hashrate on left axis, miners on right axis
+- **Time Series Scaling** - Proper time axis handling for accurate data visualization
+- **Clean Default View** - Optimized for essential mining metrics
+- **Security Features** - Content Security Policy, input validation, and XSS protection
 
 ## Quick Start
 

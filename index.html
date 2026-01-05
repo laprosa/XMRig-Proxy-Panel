@@ -3,28 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src http: https:; font-src 'self' data: https://cdnjs.cloudflare.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <title>XMRig Proxy Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <header>
             <h1>
+                <i class="fas fa-chart-line"></i>
                 XMRig Proxy Dashboard
                 <span id="statusBadge" class="status-badge">Loading...</span>
             </h1>
             <div class="subtitle">
                 <span id="workerId">Loading...</span>
-                <span class="edit-url" id="editUrl" onclick="showConfig()">Change URL</span>
-                <span class="refresh-time">Last updated: <span id="lastUpdate">--</span></span>
+                <span class="edit-url" id="editUrl" onclick="showConfig()"><i class="fas fa-edit"></i> Change URL</span>
+                <span class="refresh-controls">
+                    <span class="refresh-label"><i class="fas fa-sync-alt"></i> Update:</span>
+                    <button class="refresh-btn refresh-btn-active" data-rate="1000" onclick="setRefreshRate(1000)">1s</button>
+                    <button class="refresh-btn" data-rate="5000" onclick="setRefreshRate(5000)">5s</button>
+                    <button class="refresh-btn" data-rate="10000" onclick="setRefreshRate(10000)">10s</button>
+                    <button class="refresh-btn" data-rate="30000" onclick="setRefreshRate(30000)">30s</button>
+                </span>
+                <span class="refresh-time"><i class="fas fa-clock"></i> Last updated: <span id="lastUpdate">--</span></span>
             </div>
         </header>
 
         <div id="dashboard" class="loading">
-            <p>Loading dashboard data...</p>
+            <p><i class="fas fa-spinner fa-spin"></i> Loading dashboard data...</p>
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/date-fns@2.29.3/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
