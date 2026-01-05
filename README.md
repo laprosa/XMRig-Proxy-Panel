@@ -2,6 +2,11 @@
 
 A modern, real-time web dashboard for monitoring XMRig Proxy mining operations.
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/laprosa/XMRig-Proxy-Panel/refs/heads/main/panel.png" width=600px height=600px />
+</p>
+
+
 ## Features
 
 - **Real-time Monitoring** - Auto-refreshes every 10 seconds
